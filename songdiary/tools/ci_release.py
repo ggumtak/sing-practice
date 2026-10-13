@@ -29,7 +29,7 @@ from cryptography.hazmat.primitives.serialization import pkcs12
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from build_apk import web_files  # noqa: E402
 
-REPO_RAW = 'https://raw.githubusercontent.com/ggumtak/myroutine/songdiary-ota/'
+REPO_RAW = 'https://raw.githubusercontent.com/ggumtak/sing-practice/songdiary-ota/'
 P256_N = 0xFFFFFFFF00000000FFFFFFFFFFFFFFFFBCE6FAADA7179E84F3B9CAC2FC632551
 OK_NAME = re.compile(r'^[A-Za-z0-9_.\-/]+$')  # what the app accepts (update.js okPath)
 

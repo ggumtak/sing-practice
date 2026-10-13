@@ -70,13 +70,15 @@ jobs:
           pip install -q cryptography
           python3 songdiary/tools/drive_apk.py key --out-dir "$RUNNER_TEMP/sign"
 
-      # every build is a newer version: code 100 + the run number (the APK's versionCode too)
+      # every build is a newer version: code 200 + the run number (the APK's versionCode too).
+      # 200, not 100: this repository's run numbers restart at 1, and the last build from
+      # ggumtak/myroutine was 1.5.22 (code 122), so codes must stay above that.
       - name: Version and in-app update
         if: steps.on.outputs.on == 'true'
         id: ver
         run: |
-          code=$((100 + GITHUB_RUN_NUMBER))
-          name="1.5.$GITHUB_RUN_NUMBER"
+          code=$((200 + GITHUB_RUN_NUMBER))
+          name="1.6.$GITHUB_RUN_NUMBER"
           echo "code=$code" >> "$GITHUB_OUTPUT"; echo "name=$name" >> "$GITHUB_OUTPUT"
           ota="$RUNNER_TEMP/ota"
           if git fetch -q --depth 1 origin songdiary-ota; then git worktree add -q "$ota" FETCH_HEAD && git -C "$ota" switch -q -C songdiary-ota

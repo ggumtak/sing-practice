@@ -7,7 +7,7 @@
 const Cap = window.Capacitor;
 const isNative = !!(Cap && typeof Cap.isNativePlatform === 'function' && Cap.isNativePlatform());
 /* the signed list of the newest version (the main branch of the app's public repository) */
-const CHANNEL = 'https://raw.githubusercontent.com/ggumtak/myroutine/main/songdiary/release/latest.json';
+const CHANNEL = 'https://raw.githubusercontent.com/ggumtak/sing-practice/main/songdiary/release/latest.json';
 /* only lists signed with the matching private key are accepted */
 const PUBKEY = { kty: 'EC', crv: 'P-256', x: 'd_MR63hlKyluLJIGmEblfGDlzCSNpIuP3uGL7PcQM44', y: 't-1LMp5HV0PTWeAIigpf89HX72JiGDbMokSxB5aoFXc' };
 const LS = 'songdiary:v1:ota';

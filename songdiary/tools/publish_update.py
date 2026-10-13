@@ -34,7 +34,7 @@ ROOT = Path(__file__).resolve().parents[1]
 WWW = ROOT / 'www'
 OUT = ROOT / 'release' / 'latest.json'
 FILES = ROOT / 'release' / 'files'
-BASE = 'https://raw.githubusercontent.com/ggumtak/myroutine/main/songdiary/release/files/'
+BASE = 'https://raw.githubusercontent.com/ggumtak/sing-practice/main/songdiary/release/files/'
 OK_NAME = re.compile(r'^[A-Za-z0-9_.\-/]+$')  # what the app accepts (update.js okPath)
 
 
