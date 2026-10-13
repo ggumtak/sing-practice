@@ -184,7 +184,7 @@ SONGDIARY_STOREPASS=... python3 songdiary/tools/build_apk.py \
 **앱 안 업데이트도 자동이에요.** 같은 빌드가 `songdiary-ota` 브랜치에 서명된 업데이트(`latest.json`, `files/<sha256>`)로 올라가고,
 앱은 열 때(6시간에 한 번까지) 그걸 확인해서 오늘 화면 위에 ‘업데이트’를 띄워요. 누르면 바뀐 파일만 받아 바로 바뀌어요(다시 설치 X).
 업데이트 서명 키는 드라이브의 APK 서명 키에서 매번 같게 만들어 내서(`tools/ci_release.py`) 따로 준비할 게 없어요.
-버전은 빌드마다 `1.6.<실행 번호>`, 번호는 `200 + 실행 번호`(예전 저장소 ggumtak/myroutine의 마지막 빌드가 1.5.22, 122라서 그보다 크게). APK는 새 폰에 깔거나 안드로이드 쪽(`native/`)이 바뀌었을 때만
+버전 이름은 빌드마다 `0.0.<실행 번호>`(화면에 보이는 것), 앱과 안드로이드가 비교하는 번호는 `200 + 실행 번호`예요(예전 저장소 ggumtak/myroutine의 마지막 빌드 1.5.22가 122라서 그보다 커야 업데이트가 돼요). APK는 새 폰에 깔거나 안드로이드 쪽(`native/`)이 바뀌었을 때만
 필요해요(그때는 워크플로의 `SONGDIARY_MIN_APK`를 올려요).
 
 ReaderaPlus와 같은 방식이에요. 앱이 바뀐 푸시마다 GitHub Actions(`.github/workflows/songdiary-apk.yml`)가
